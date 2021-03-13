@@ -18,5 +18,5 @@ curl 'https://daycaptain.com/2021-12-31/tasks' \
 
 To authenticate your user in the API calls, you have to include a `Bearer` token.
 
-You generate a token in your https://daycaptain.com/account.html[user account^] (kbd:[G+X]) under the section _API Tokens_.
+You generate a token in your https://daycaptain.com/account.html[user account^] ( kbd:[G+X] ) under the section _API Tokens_.
 The generated token is used as the `Bearer` token in the `Authorization` HTTP header, as seen above.
