@@ -23,4 +23,5 @@ The generated token is used as the `Bearer` token in the `Authorization` HTTP he
 
 *Example:*
 
-"Your token: `123...abc`" will be included as `-H "Authorization: Bearer 123...abc"` in your HTTP call.
+"Your token: `123..abc` " + 
+will be included as `-H "Authorization: Bearer 123..abc"` in your HTTP call.
