@@ -1,4 +1,4 @@
-== DayCaptain's REST API
+== DayCaptain's REST API _(first draft)_
 
 https://daycaptain.com[DayCaptain^] offers a REST API to manager a user's information objects.
 
