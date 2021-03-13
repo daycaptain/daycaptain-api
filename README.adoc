@@ -1,0 +1,22 @@
+== DayCaptain's REST API
+
+https://daycaptain.com[DayCaptain^] offers a REST API to manager a user's information objects.
+
+The API is usable with any technology that supports HTTP.
+
+An example call that creates a new day task looks as follows (with `curl`):
+
+----
+curl 'https://daycaptain.com/2021-12-31/tasks' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string":"Hello Captain"}'
+----
+
+=== Authentication
+
+To authenticate your user in the API calls, you have to include a `Bearer` token.
+
+You generate a token in your https://daycaptain.com/account.html[user account^] (<kbd>G+X</kbd>) under the section _API Tokens_.
+The generated token is used as the `Bearer` token in the `Authorization` HTTP header, as seen above.
