@@ -20,3 +20,7 @@ To authenticate your user in the API calls, you have to include a `Bearer` token
 
 You generate a token in your https://daycaptain.com/account.html[user account^] (`G+X`) under the section _API Tokens_.
 The generated token is used as the `Bearer` token in the `Authorization` HTTP header, as seen above.
+
+*Example:*
+
+"Your token: `123...abc`" will be included as `-H "Authorization: Bearer 123...abc"` in your HTTP call.
