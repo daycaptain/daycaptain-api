@@ -44,8 +44,6 @@ curl 'https://daycaptain.com/backlog-items' \
 
 You can add following information in the request body JSON:
 
-#[width="70%",cols="3,>1",frame="none",grid="none"]
-
 [frame="none",grid="none"]
 |=======================================================================================================================
 | *Parameter* | *Description*                         | *Example*
