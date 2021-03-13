@@ -25,3 +25,35 @@ The generated token is used as the `Bearer` token in the `Authorization` HTTP he
 
 "Your token: `123[..]abc` " + 
 will be included as `-H "Authorization: Bearer 123[..]abc"` in your HTTP call.
+
+
+=== Create inbox tasks
+
+You add a tasks that shows up in your https://daycaptain.com/backlogs.html[backlogs^] inbox with the following HTTP call:
+
+This is very helpful for quickly adding tasks that pop up in your head.
+By using this way, you don't have to open up the program and you won't get distracted by all the information.
+
+----
+curl 'https://daycaptain.com/backlog-items' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string":"Hello Captain"}'
+----
+
+You can add following information in the request body JSON:
+
+#[width="70%",cols="3,>1",frame="none",grid="none"]
+
+[frame="none",grid="none"]
+|=======================================================================================================================
+| *Parameter* | *Description*                         | *Example*
+| `string`    | Task name (mandatory)                 | `"string": "Hello Captain"`
+| `backlog`   | Backlog where to add (inbox if empty) | `"backlog": "To-contact"`
+| `note`      | Additional note                       | `"note": "This is a note containing a link\nhttps://google.com"`
+| `area`      | Task's area                           | `"area": "Work"`
+| `project`   | Task's project                        | `"area": "My side-hustle"`
+|=======================================================================================================================
+
+Note that you can either set an `area` or a `project`.
