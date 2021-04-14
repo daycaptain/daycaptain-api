@@ -49,7 +49,7 @@ You can add following information in the request body JSON:
 | *Parameter* | *Description*                          | *Example*
 | `string`    | Task name (mandatory)                  | `"string": "Hello Captain"`
 | `backlog`   | Backlog where to add (inbox if `null`) | `"backlog": "To-contact"`
-| `note`      | Additional note                        | `"note": "A note containing a link\nhttps://google.com"`
+| `note`      | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
 | `area`      | Task's area                            | `"area": "Work"`
 | `project`   | Task's project                         | `"area": "My side-hustle"`
 |========================================================================================================================
