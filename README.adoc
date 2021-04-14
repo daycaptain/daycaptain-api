@@ -45,13 +45,13 @@ curl 'https://daycaptain.com/backlog-items' \
 You can add following information in the request body JSON:
 
 [frame="none",grid="none"]
-|=======================================================================================================================
-| *Parameter* | *Description*                         | *Example*
-| `string`    | Task name (mandatory)                 | `"string": "Hello Captain"`
-| `backlog`   | Backlog where to add (inbox if empty) | `"backlog": "To-contact"`
-| `note`      | Additional note                       | `"note": "This is a note containing a link\nhttps://google.com"`
-| `area`      | Task's area                           | `"area": "Work"`
-| `project`   | Task's project                        | `"area": "My side-hustle"`
-|=======================================================================================================================
+|========================================================================================================================
+| *Parameter* | *Description*                          | *Example*
+| `string`    | Task name (mandatory)                  | `"string": "Hello Captain"`
+| `backlog`   | Backlog where to add (inbox if `null`) | `"backlog": "To-contact"`
+| `note`      | Additional note                        | `"note": "This is a note containing a link\nhttps://google.com"`
+| `area`      | Task's area                            | `"area": "Work"`
+| `project`   | Task's project                         | `"area": "My side-hustle"`
+|========================================================================================================================
 
 Note that you can either set an `area` or a `project`.
