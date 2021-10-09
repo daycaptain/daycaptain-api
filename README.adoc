@@ -6,8 +6,8 @@ The API is usable with any technology that supports HTTP.
 
 == Categories
 
-- tasks.adoc[Tasks]
-- timeevents.adoc[Time events]
+- link:tasks.adoc[Tasks]
+- link:timeevents.adoc[Time events]
 - Day events (TBD)
 - Backlogs (TBD)
 - Projects (TBD)
