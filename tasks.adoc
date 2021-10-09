@@ -1,0 +1,107 @@
+= Tasks REST API
+
+The API endpoints for tasks in DayCaptain are as follows:
+
+- `https://daycaptain.com/backlog-items`, for backlog tasks, located in the inbox or some backlog folder
+- `https://daycaptain.com/<date-iso-8601>/tasks`, for day-relevant tasks, e.g. `https://daycaptain.com/2021-01-01/tasks`
+- `https://daycaptain.com/<week-iso-8601>/tasks`, for week-relevant tasks, e.g. `https://daycaptain.com/2021-W05/tasks`
+
+
+== Create inbox tasks
+
+You add a tasks that shows up in your https://daycaptain.com/backlogs.html[backlogs^] inbox with the following HTTP call:
+
+This is very helpful for quickly adding tasks that pop up in your head.
+By using this way, you don't have to open up the program and you won't get distracted by all the information.
+
+----
+curl 'https://daycaptain.com/backlog-items' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string":"Hello Captain"}'
+----
+
+TIP: In our tools repository, there is the https://github.com/daycaptain/tools/blob/main/todos-add[todos-add^] cli helper, that does exactly this.
+
+You can add following information in the request body JSON:
+
+[frame="none",grid="none"]
+|========================================================================================================================
+| *Parameter* | *Description*                          | *Example*
+| `string`    | Task name (mandatory)                  | `"string": "Hello Captain"`
+| `backlog`   | Backlog where to add (inbox if `null`) | `"backlog": "To-contact"`
+| `note`      | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
+| `area`      | Task's area                            | `"area": "Work"`
+| `project`   | Task's project                         | `"area": "My side-hustle"`
+|========================================================================================================================
+
+Note that you can either set an `area` OR a `project`.
+
+
+== Create day tasks
+
+You add a tasks that shows up in your https://daycaptain.com/day.html[day view^] of a specific day with the following HTTP call:
+
+This is helpful for quickly adding a task to today's or tomorrow's task list.
+
+----
+curl 'https://daycaptain.com/2021-12-31/tasks' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string":"Celebrating new year"}'
+----
+
+[frame="none",grid="none"]
+|========================================================================================================================
+| *URL path* | *Description*        | *Example*
+| `<date>`   | The date in ISO-8601 | `https://daycaptain.com/2021-12-31/tasks`
+| | |
+| *Parameter*     | *Description*                          | *Example*
+| `string`        | Task name (mandatory)                  | `"string": "Hello Captain"`
+| `planned`       | Planned time to spend in minutes       | `"planned": 60`
+| `note`          | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
+| `area`          | Task's area                            | `"area": "Work"`
+| `project`       | Task's project                         | `"area": "My side-hustle"`
+| `repeat`        | Repeating the task for _n_ times       | `"repeat": 2`
+| `repeatCadence` | Repeating the task every _n_ days      | `"repeatCadence": 1`
+|========================================================================================================================
+
+Note that you can either set an `area` OR a `project`.
+
+The `repeat` params are optional and if set will cause the task to be repeated.
+If `repeat` is included with a non-zero amount, but `repeatCadence` isn't, the default cadence is `1` (every) day.
+
+
+== Create week tasks
+
+You add a tasks that shows up in your https://daycaptain.com/week.html[week view^] of a specific week with the following HTTP call:
+
+----
+curl 'https://daycaptain.com/2021-W01/tasks' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string":"Plan new year resolutions"}'
+----
+
+[frame="none",grid="none"]
+|========================================================================================================================
+| *URL path* | *Description*             | *Example*
+| `<week>`   | The year week in ISO-8601 | `https://daycaptain.com/2021-W02/tasks`
+| | |
+| *Parameter*     | *Description*                          | *Example*
+| `string`        | Task name (mandatory)                  | `"string": "Hello Captain"`
+| `planned`       | Planned time to spend in minutes       | `"planned": 60`
+| `note`          | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
+| `area`          | Task's area                            | `"area": "Work"`
+| `project`       | Task's project                         | `"area": "My side-hustle"`
+| `repeat`        | Repeating the task for _n_ times       | `"repeat": 2`
+| `repeatCadence` | Repeating the task every _n_ weeks     | `"repeatCadence": 1`
+|========================================================================================================================
+
+Note that you can either set an `area` OR a `project`.
+
+The `repeat` params are optional and if set will cause the task to be repeated.
+If `repeat` is included with a non-zero amount, but `repeatCadence` isn't, the default cadence is `1` (every) week.
