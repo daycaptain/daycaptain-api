@@ -2,9 +2,9 @@
 
 The API endpoints for tasks in DayCaptain are as follows:
 
-- `pass:https://daycaptain.com/backlog-items`, for backlog tasks, located in the inbox or some backlog folder
-- `https://daycaptain.com/<date-iso-8601>/tasks`, for day-relevant tasks, e.g. `https://daycaptain.com/2021-01-01/tasks`
-- `https://daycaptain.com/<week-iso-8601>/tasks`, for week-relevant tasks, e.g. `https://daycaptain.com/2021-W05/tasks`
+- `\https://daycaptain.com/backlog-items`, for backlog tasks, located in the inbox or some backlog folder
+- `\https://daycaptain.com/<date-iso-8601>/tasks`, for day-relevant tasks, e.g. `https://daycaptain.com/2021-01-01/tasks`
+- `\https://daycaptain.com/<week-iso-8601>/tasks`, for week-relevant tasks, e.g. `https://daycaptain.com/2021-W05/tasks`
 
 
 == Create inbox tasks
