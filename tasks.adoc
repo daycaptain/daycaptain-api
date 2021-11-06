@@ -29,12 +29,12 @@ You can add following information in the request body JSON:
 
 [frame="none",grid="none"]
 |========================================================================================================================
-| *Parameter* | *Description*                          | *Example*
-| `string`    | Task name (mandatory)                  | `"string": "Hello Captain"`
-| `backlog`   | Backlog where to add (inbox if `null`) | `"backlog": "To-contact"`
-| `note`      | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
-| `area`      | Task's area                            | `"area": "Work"`
-| `project`   | Task's project                         | `"area": "My side-hustle"`
+| *JSON field* | *Description*                          | *Example*
+| `string`     | Task name (mandatory)                  | `"string": "Hello Captain"`
+| `backlog`    | Backlog where to add (inbox if `null`) | `"backlog": "To-contact"`
+| `note`       | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
+| `area`       | Task's area                            | `"area": "Work"`
+| `project`    | Task's project                         | `"area": "My side-hustle"`
 |========================================================================================================================
 
 Note that you can either set an `area` OR a `project`.
@@ -61,7 +61,7 @@ TIP: You can achieve the same with the following command: `todos-add --date 2021
 | *URL path* | *Description*        | *Example*
 | `<date>`   | The date in ISO-8601 | `\https://daycaptain.com/2021-12-31/tasks`
 | | |
-| *Parameter*     | *Description*                          | *Example*
+| *JSON field*    | *Description*                          | *Example*
 | `string`        | Task name (mandatory)                  | `"string": "Hello Captain"`
 | `planned`       | Planned time to spend in minutes       | `"planned": 60`
 | `note`          | Additional note                        | `"note": "A note with a link\nhttps://google.com"`
@@ -96,7 +96,7 @@ TIP: You can achieve the same with the following command: `todos-add --week 2021
 | *URL path* | *Description*             | *Example*
 | `<week>`   | The year week in ISO-8601 | `\https://daycaptain.com/2021-W02/tasks`
 | | |
-| *Parameter*     | *Description*                          | *Example*
+| *JSON field*    | *Description*                          | *Example*
 | `string`        | Task name (mandatory)                  | `"string": "Hello Captain"`
 | `planned`       | Planned time to spend in minutes       | `"planned": 60`
 | `note`          | Additional note                        | `"note": "A note with a link\nhttps://google.com"`

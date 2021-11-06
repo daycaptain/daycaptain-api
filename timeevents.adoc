@@ -21,7 +21,7 @@ curl 'https://daycaptain.com/2021-12-31/day-time-events' \
 | *URL path* | *Description*        | *Example*
 | `<date>`   | The date in ISO-8601 | `\https://daycaptain.com/2021-12-31/day-time-events`
 | | |
-| *Parameter*     | *Description*                                       | *Example*
+| *JSON field*    | *Description*                                       | *Example*
 | `string`        | Event name (mandatory)                              | `"string": "Hello Captain"`
 | `start`         | Event start date &amp; time in ISO-8601 (mandatory) | `"start": "2021-12-31T19:00:00+01:00[Europe/Berlin]"`
 | `end`           | Event end date &amp; time in ISO-8601 (mandatory)   | `"end": "2021-12-31T20:00:00+01:00[Europe/Berlin]"`
