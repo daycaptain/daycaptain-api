@@ -8,7 +8,7 @@ The API is usable with any technology that supports HTTP.
 
 - link:tasks.adoc[Tasks]
 - link:timeevents.adoc[Time events]
-- Day events (TBD)
+- link:dayevents.adoc[Day events]
 - Backlogs (TBD)
 - Projects (TBD)
 - Areas (TBD)

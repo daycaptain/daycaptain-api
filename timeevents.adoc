@@ -1,3 +1,36 @@
 = Time events REST API
 
-TBD
+The API endpoint for (day) time events in DayCaptain is: `\https://daycaptain.com/<date-iso-8601>/day-time-events`, e.g. `\https://daycaptain.com/2021-01-01/day-time-events`
+
+== Create time events
+
+You add a time event that shows up in your https://daycaptain.com/day.html[day view^] time line of a specific day with the following HTTP call:
+
+----
+curl 'https://daycaptain.com/2021-12-31/day-time-events' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string": "New year party",
+    "start": "2021-12-31T19:00:00+01:00[Europe/Berlin]",
+    "end": "2022-01-01T02:00:00+01:00[Europe/Berlin]"}'
+----
+
+[frame="none",grid="none"]
+|========================================================================================================================
+| *URL path* | *Description*        | *Example*
+| `<date>`   | The date in ISO-8601 | `\https://daycaptain.com/2021-12-31/day-time-events`
+| | |
+| *Parameter*     | *Description*                                       | *Example*
+| `string`        | Event name (mandatory)                              | `"string": "Hello Captain"`
+| `start`         | Event start date &amp; time in ISO-8601 (mandatory) | `"start": "2021-12-31T19:00:00+01:00[Europe/Berlin]"`
+| `end`           | Event end date &amp; time in ISO-8601 (mandatory)   | `"end": "2021-12-31T20:00:00+01:00[Europe/Berlin]"`
+| `note`          | Additional note                                     | `"note": "A note with a link\nhttps://google.com"`
+| `area`          | Event's area                                        | `"area": "Work"`
+| `project`       | Event's project                                     | `"area": "My side-hustle"`
+|========================================================================================================================
+
+Note that you can either set an `area` OR a `project`.
+
+The `start` and `end` time parameters _should_ provide the user local time zone.
+If the time zones aren't provided, they are guessed by best effort from the previous time events' time zones.

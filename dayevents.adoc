@@ -1,0 +1,26 @@
+= Day events REST API
+
+The API endpoint for day events in DayCaptain is: `\https://daycaptain.com/<date-iso-8601>/day-events`, e.g. `\https://daycaptain.com/2021-01-01/day-events`
+
+== Create day events
+
+You add a day event that shows up in your https://daycaptain.com/day.html[day view^] of a specific day with the following HTTP call:
+
+----
+curl 'https://daycaptain.com/2022-01-01/day-events' \
+  -XPOST -i \
+  -H "Authorization: Bearer <token>" \
+  -H 'Content-Type: application/json' \
+  -d '{"string": "New year", "start": "2022-01-01", "end": "2022-01-01"}'
+----
+
+[frame="none",grid="none"]
+|========================================================================================================================
+| *URL path* | *Description*        | *Example*
+| `<date>`   | The date in ISO-8601 | `\https://daycaptain.com/2021-12-31/day-events`
+| | |
+| *Parameter*     | *Description*                                     | *Example*
+| `string`        | Event name (mandatory)                            | `"string": "Hello Captain"`
+| `start`         | Event start date in ISO-8601 (mandatory)          | `"start": "2021-12-31T19:00:00+01:00[Europe/Berlin]"`
+| `end`           | Event end date in ISO-8601 (inclusive, mandatory) | `"end": "2021-12-31T20:00:00+01:00[Europe/Berlin]"`
+|========================================================================================================================
